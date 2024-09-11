@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css">
+  <title><%= pokemon.name %></title>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <div class="row align-items-center">
+      <!-- Coluna com o nome e ID do Pokémon -->
+      <div class="col-md-6">
+        <h1 class="text-left"><%= pokemon.name %></h1>
+        <p>ID: <%= pokemon.id %></p>
+        <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>" class="img-fluid pokemon-image">
+        <div>
+          <% pokemon.types.forEach(type => { %>
+            <span class="badge type-<%= type.type.name %>"><%= type.type.name %></span>
+          <% }) %>
+        </div>
+      </div>
+
+      <!-- Coluna com o formulário de comparação -->
+      <div class="col-md-6 text-right">
+        <h2>Comparar com:</h2>
+        <form action="/compare" method="get">
+          <input type="hidden" name="pokemon1" value="<%= pokemon.id %>">
+          <div class="form-group">
+            <label for="pokemon2">ID do Pokémon para comparar:</label>
+            <input type="number" id="pokemon2" name="pokemon2" class="form-control" placeholder="Digite o ID do Pokémon" min="1" required>
+          </div>
+          <button type="submit" class="btn btn-secondary">Comparar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tabela de Habilidades -->
+     <h1><br></h1>
+    <h2>Habilidades:</h2>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Habilidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% pokemon.abilities.forEach(ability => { %>
+        <tr>
+          <td><%= ability.ability.name %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+   <!-- Tabela de Moves -->
+   <h2>Moves:</h2>
+<div class="row">
+  <% let tableCount = 1; %>
+  <% for (let i = 0; i < pokemon.moves.length; i += 10) { %>
+    <div class="col-md-6">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>Move Table (<%= tableCount++ %>)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pokemon.moves.slice(i, i + 10).forEach(move => { %>
+          <tr>
+            <td><%= move.move.name %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</div>
+
+    <!-- Tabela de Status -->
+    <h2>Stats:</h2>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Stats</th>
+          <th>Base Stats</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% pokemon.stats.forEach(stat => { %>
+        <tr>
+          <td><%= stat.stat.name %></td>
+          <td><%= stat.base_stat %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

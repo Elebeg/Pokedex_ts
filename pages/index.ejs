@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css"> 
+  <title>PokéDex</title>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <table class="table table-striped">
+      <h1>PokéDex</h1>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Informações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach(pokemon => { %>
+        <tr>
+          <th scope="row"><%= pokemon.id %></th>
+          <td><%= pokemon.name %></td>
+          <td>
+            <a href="/pokemon/<%= pokemon.id %>" class="btn btn-primary">Ver Detalhes</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+      <!-- Formulário para selecionar outro Pokémon -->
+    <div class="mt-4">
+      <form action="/pokemon" method="get" class="form-inline">
+        <h1><br><br></h1>
+        <h2>Busque outro Pokémon:</h2>
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="pokemonId" class="sr-only">ID do Pokémon</label>
+          <input type="number" class="form-control" id="pokemonId" name="id" placeholder="Digite o ID do Pokémon" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Ver Detalhes</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

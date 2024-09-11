@@ -1,0 +1,194 @@
+body {
+  background-color: #000; /* Fundo preto */
+  color: #f5f5f5; 
+  font-family: 'Arial', sans-serif; 
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('./img/pokemon.jpg'); /* Imagem de fundo temática */
+  background-size: cover; 
+  background-attachment: fixed; /* Mantém a imagem fixa durante o rolar da página */
+}
+
+h1 {
+  color: #ffcb05; /* Amarelo do Pikachu */
+  text-align: center;
+  margin-top: 0px;    
+  font-size: 3.5rem;
+}
+
+p {
+  font-size: 20px;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #111; /* Fundo escuro para o container */
+  border-radius: 10px; 
+  border: 2px solid #ffcb05; /* Borda amarela */
+}
+
+/* Tabelas */
+.table {
+  color: #f5f5f5; /* Cor do texto na tabela */
+}
+
+.table thead {
+  background-color: #ffcb05; /* Cabeçalhos em amarelo */
+  color: #000; /* Texto preto nos cabeçalhos */
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background-color: #333; /* Linhas ímpares */
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #444; /* Linhas pares */
+}
+
+.table th, .table td {
+  text-align: center; /* Centraliza o texto nas células */
+}
+
+ul {
+  list-style-type: none; 
+  padding: 0;
+}
+
+ul li {
+  background-color: #222; /* Fundo escuro para itens da lista */
+  border: 1px solid #444; /* Borda cinza escura */
+  border-radius: 15px; 
+  margin: 5px 0;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+ul li:nth-child(odd) {
+  background-color: #333; /* Cor primaria para itens de lista */
+}
+
+ul li:nth-child(even) {
+  background-color: #444; /* Cor secundaria para itens de lista */
+}
+
+.btn {
+  background-color: #ff6600;
+  color: black; /* Links em amarelo */
+  text-decoration: none;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #ff6600; /* Laranja para links em hover */
+  text-decoration: underline;
+}
+
+.pokemon-image {
+  width: 200px; 
+  height: auto; /* Mantém a proporção */
+  display: block;
+  margin: 0 auto;
+}
+
+.badge {
+  font-size: 1.2rem; /* Aumenta o tamanho do texto do tipo */
+  padding: 10px 20px; /* Adiciona mais espaço ao redor do texto */
+  border-radius: 8px; /* Torna as bordas mais arredondadas */
+  margin-left: 20px ;
+}
+
+
+/* Tipos de Pokémon com suas respectivas cores */
+.type-grass {
+  background-color: #78C850;
+  color: white;
+}
+
+.type-fire {
+  background-color: #F08030;
+  color: white;
+}
+
+.type-water {
+  background-color: #6890F0;
+  color: white;
+}
+
+.type-electric {
+  background-color: #F8D030;
+  color: black;
+}
+
+.type-ice {
+  background-color: #98D8D8;
+  color: black;
+}
+
+.type-fighting {
+  background-color: #C03028;
+  color: white;
+}
+
+.type-poison {
+  background-color: #A040A0;
+  color: white;
+}
+
+.type-ground {
+  background-color: #E0C068;
+  color: black;
+}
+
+.type-flying {
+  background-color: #A890F0;
+  color: white;
+}
+
+.type-psychic {
+  background-color: #F85888;
+  color: white;
+}
+
+.type-bug {
+  background-color: #A8B820;
+  color: white;
+}
+
+.type-rock {
+  background-color: #B8A038;
+  color: white;
+}
+
+.type-ghost {
+  background-color: #705898;
+  color: white;
+}
+
+.type-dark {
+  background-color: #705848;
+  color: white;
+}
+
+.type-dragon {
+  background-color: #7038F8;
+  color: white;
+}
+
+.type-steel {
+  background-color: #B8B8D0;
+  color: black;
+}
+
+.type-fairy {
+  background-color: #EE99AC;
+  color: black;
+}
+
+.type-normal {
+  background-color: #A8A878;
+  color: white;
+}

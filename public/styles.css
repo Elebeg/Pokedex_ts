@@ -94,6 +94,13 @@ ul li:nth-child(even) {
   margin: 0 auto;
 }
 
+.pokemon-gif {
+  width: 50px; 
+  height: auto; /* Mantém a proporção */
+  display: block;
+  margin: 0 auto;
+}
+
 .badge {
   font-size: 1.2rem; /* Aumenta o tamanho do texto do tipo */
   padding: 10px 20px; /* Adiciona mais espaço ao redor do texto */

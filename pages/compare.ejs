@@ -15,7 +15,7 @@
 
     <div class="row text-center mb-4">
       <div class="col-md-6">
-        <img src="<%= pokemon1.sprites.front_default %>" alt="<%= pokemon1.name %>" class="img-fluid pokemon-image">
+        <img src="<%= pokemon1.sprites.other.showdown.front_default %>" alt="<%= pokemon1.name %>" class="img-fluid pokemon-gif">
         <h3><%= pokemon1.name %></h3>
         <div>
           <% pokemon1.types.forEach(type => { %>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <img src="<%= pokemon2.sprites.front_default %>" alt="<%= pokemon2.name %>" class="img-fluid pokemon-image">
+        <img src="<%= pokemon2.sprites.other.showdown.front_default %>" alt="<%= pokemon2.name %>" class="img-fluid pokemon-gif">
         <h3><%= pokemon2.name %></h3>
         <div>
           <% pokemon2.types.forEach(type => { %>
